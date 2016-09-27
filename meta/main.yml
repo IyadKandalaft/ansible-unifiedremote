@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  author: Iyad Kandalaft
+  description: Installs Unified Remote Server
+  license: BSD
+  min_ansible_version: 1.9
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+    - trusty
+  - name: Debian
+    versions:
+    - squeeze
+    - wheezy
+  - name: Fedora
+    versions:
+    - 23
+  categories:
+  - 
+dependencies: []

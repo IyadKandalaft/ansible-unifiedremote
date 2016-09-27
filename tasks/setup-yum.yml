@@ -1,0 +1,17 @@
+
+- name: Download URServer | x86_64 rpm package
+  get_url:
+    url: https://www.unifiedremote.com/download/linux-x64-rpm 
+    dest: {{ package_rpm_path }}
+    mode: 0440
+  when: "ansible_architecture" == "x86_64"
+
+- name: Download URServer | x86 rpm package
+  get_url:
+    url: https://www.unifiedremote.com/download/linux-x86-rpm 
+    dest: {{ package_rpm_path }}
+    mode: 0440
+  when: "ansible_architecture" == "x86"
+
+- name: YUM | Install URServer
+  yum: name={{ package_rpm_path }} state=present
