@@ -1,0 +1,5 @@
+---
+
+package_download_path: /tmp 
+package_rpm_path: "{{ package_download_path }}unified-remote-server.rpm"
+package_deb_path: "{{ package_download_path }}unified-remote-server.deb"

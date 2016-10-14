@@ -1,0 +1,16 @@
+- name: Download URServer | x86_64 deb package
+  get_url:
+    url: https://www.unifiedremote.com/download/linux-x64-deb
+    dest: "{{ package_deb_path }}"
+    mode: 0440
+  when: ansible_architecture == 'x86_64'
+
+- name: Download URServer | x86 deb package
+  get_url:
+    url: https://www.unifiedremote.com/download/linux-x86-deb
+    dest: "{{ package_deb_path }}"
+    mode: 0440
+  when: ansible_architecture == 'x86'
+
+- name: APT | Install URServer
+  apt: deb={{ package_deb_path }} state=present
